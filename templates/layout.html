@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="author" content="Eoussama">
+        <meta name="application-name" content="J-Learn">
+        <meta name="description" content="A simple Flask website to help me personally learn Japanese, and hey, I'm no weeabo.">
+        <meta name="keywords" content="Flask, Japanese, learning, education">
+
+        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/eomponents.css') }}">
+
+        <title>J-Learn</title>
+    </head>
+
+    <body>
+        <header class="landleg text-center">
+            <img width="200px" src="{{ url_for('static', filename='images/logo.svg') }}" alt="J-Learn Logo">
+            <h1 class="lead">J-Learn</h1>
+            <p class="text-gray">Step-up your Japanese</p>
+        </header>
+
+        <nav class="navbar">
+            <ul class="navitems">
+                <a href="/">
+                    <li class="navitem brand">
+                        <img class="logo" src="{{ url_for('static', filename='images/logo.svg') }}" alt="J-Learn Logo">
+                        <span class="title">J-Learn</span>
+                    </li>
+                </a>
+            </ul>
+        </nav>
+
+        <main class="container">
+            {% block body %} {% endblock %}
+
+        </main>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='scripts/eomponents.js') }}"></script>
+    </body>
+</html>
