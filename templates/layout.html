@@ -6,8 +6,10 @@
         <meta name="application-name" content="J-Learn">
         <meta name="description" content="A simple Flask website to help me personally learn Japanese, and hey, I'm no weeabo.">
         <meta name="keywords" content="Flask, Japanese, learning, education">
+        <meta charset="utf-8">
 
         <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome/css/fontawesome-all.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/eomponents.css') }}">
 
         <title>J-Learn</title>
@@ -20,12 +22,18 @@
             <p class="text-gray">Step-up your Japanese</p>
         </header>
 
-        <nav class="navbar">
+        <nav class="navbar sticky">
             <ul class="navitems">
                 <a href="/">
                     <li class="navitem brand">
                         <img class="logo" src="{{ url_for('static', filename='images/logo.svg') }}" alt="J-Learn Logo">
                         <span class="title">J-Learn</span>
+                    </li>
+                </a>
+
+                <a href="/add/" class="pull-right">
+                    <li class="navitem">
+                        <i class="fa fa-plus fa-lg"></i> Add vocabulary
                     </li>
                 </a>
             </ul>

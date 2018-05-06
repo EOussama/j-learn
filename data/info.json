@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "Japanese": "Hai",
         "English": "Yes"
@@ -12,7 +12,27 @@
         "English": "How"
     },
     {
+        "Japanese": "Sayonara",
+        "English": "GoodBye"
+    },
+    {
+        "Japanese": "Yokoso",
+        "English": "Welcome"
+    },
+    {
+        "Japanese": "Watashi no",
+        "English": "My"
+    },
+    {
         "Japanese": "Nani",
         "English": "What"
+    },
+    {
+        "Japanese": "Ohayo",
+        "English": "Good morning"
+    },
+    {
+        "Japanese": "Totemo",
+        "English": "Very"
     }
 ]

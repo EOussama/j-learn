@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1><i class="fa fa-edit"></i> Editing vocabulary</h1>
+    <hr>
+
+    <form id="formEdit" class="form-group grid grid-elements-1 grid-gap-1">
+        <input class="form-control textbox lg green" type="text" value="{{jap.Japanese}}" placeholder="Enter a Japanese term" id="japInput" required>
+        <input class="form-control textbox lg green" type="text" value="{{jap.English}}" placeholder="Enter the English translation" id="engInput" required>
+        <input type="hidden" value="{{jap.Japanese}}" id="oldJap">
+        <input type="hidden" value="{{jap.English}}" id="oldEng">
+        <div class="flex flex-gap-1 flex-gap-skip">
+            <input class="form-control btn green" type="submit" value="Edit">
+            <input class="form-control btn" type="reset">
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        window.addEventListener('load', () => {
+            const formEdit = document.getElementById('formEdit');
+            
+            formEdit.addEventListener('submit', (e) => {
+                const
+                    xhr = new XMLHttpRequest(),
+                    japTerm = document.getElementById('japInput').value,
+                    engTerm = document.getElementById('engInput').value,
+                    oldJap = document.getElementById('oldJap').value,
+                    oldEng = document.getElementById('oldEng').value;
+
+                xhr.open('POST', '/edit/data/', true)
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                xhr.send(`oldTerm={"Japanese" : "${oldJap}", "English" : "${oldEng}"}&json_data={"Japanese" : "${japTerm}", "English" : "${engTerm}"}`);
+            });
+        });
+    </script>
+{% endblock %}
